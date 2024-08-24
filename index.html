@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style> 
+    body {
+        font-family: Poppins;
+    }
+    input[type=button] {
+        font-family: Poppins;
+    }
+    </style> 
+</head>
+
+<body>
+  <div class="container">
+    <div class="tab_box">
+      <button class="tab_btn">Home</button>
+      <button class="tab_btn">About</button>
+      <button class="tab_btn">Blogs</button>
+      <button class="tab_btn">Contact us</button>
+      <div class="line"></div>
+    </div>
+    <div class="content_box">
+      <div class="content">
+            <h2>Home</h2>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus finibus natoque justo ullamcorper nam viverra per. Senectus dis mi commodo ornare turpis.</p>
+      </div>
+
+      <div class="content">
+            <h2>About</h2>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus finibus natoque justo ullamcorper nam viverra per. Senectus dis mi commodo ornare turpis.</p>
+      </div>
+
+      <div class="content">
+            <h2>Blogs</h2>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus finibus natoque justo ullamcorper nam viverra per. Senectus dis mi commodo ornare turpis.</p>
+      </div>
+
+      <div class="content">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Cursus finibus natoque justo ullamcorper nam viverra per. Senectus dis mi commodo ornare turpis.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+      const tabs = document.querySelectorAll(".tab_btn");
+      const all_content= document.querySelectorAll('.content')
+
+      tabs.forEach((tab, index)=>{
+          tab.addEventlistener('click', (e)=>{
+                tab.forEach(tab=>{tab.classList.remove('.active')});
+        tab.classList.add('active');
+
+        var line=document.querySelector('.line');
+    line.style.width = e.target.offsetWidth + "px";
+    line.style.left = e.target.offsetLeft + "px";
+        
+    all_content[index].classList.add('active');
+            })
+        })
+    </script>
+</body>
+</html>
